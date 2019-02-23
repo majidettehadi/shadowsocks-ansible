@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: shadowsocks
+  version: 1.0.0
   author: majidettehadi
   description: Install and config shadowsocks client
   license: license (GPLv2, CC-BY, etc)
