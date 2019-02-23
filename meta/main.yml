@@ -6,6 +6,13 @@ galaxy_info:
   license: license (GPLv2, CC-BY, etc)
   min_ansible_version: 2.4
   galaxy_tags:
-    shadowsocks
-    shadowsocks-client
+    - shadowsocks
+    - shadowsocks-client
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
 dependencies: []
