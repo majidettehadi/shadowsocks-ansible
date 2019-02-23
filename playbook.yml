@@ -1,5 +1,0 @@
-#!/bin/env ansible-playbook
-- hosts: localhost
-  gather_facts: no
-  roles:
-    - { role: majidettehadi.shadosocks, tags: shadowsocks }
