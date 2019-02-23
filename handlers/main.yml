@@ -1,0 +1,8 @@
+---
+- name: restart shadowsocks
+  service: name=shadowsocks state=restarted
+  when: ansible_distribution == "Debian"
+
+- name: restart shadowsocks
+  service: name=shadowsocks@config state=restarted
+  when: ansible_distribution == "Archlinux"

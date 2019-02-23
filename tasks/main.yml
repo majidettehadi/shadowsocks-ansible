@@ -1,0 +1,28 @@
+---
+- name: Include vault vars.
+  include_vars: "{{ shadowsocks_config_name }}.yml"
+
+- name: Ensure shadowsocks is installed
+  package:
+    name: shadowsocks
+    state: latest
+
+- name: Ensure shadowsocks config is available
+  template:
+    src: config.json.j2
+    dest: /etc/shadowsocks/config.json
+  notify: restart shadowsocks
+
+- name: Ensure shadosocks started and enabled
+  service:
+    name: shadowsocks
+    state: started
+    enabled: true
+  when: ansible_distribution == "Debian"
+
+- name: Ensure shadosocks started and enabled
+  service:
+    name: shadowsocks@config
+    state: started
+    enabled: true
+  when: ansible_distribution == "Archlinux"
